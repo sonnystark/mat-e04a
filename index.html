@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Task 3</title>
+    <style>
+        .flex-container{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flex-container > div {
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+        }
+        .flex-item-1{
+            flex-grow: 1;
+            background-color: lightgray;
+        }
+        .flex-item-2{
+            flex-grow: 2;
+            background-color: red;
+        }
+        .flex-item-3{
+            flex: 2;
+            padding: 5px 50px;
+            background-color: lightgray;
+        }
+        img{
+            border: 15px solid lightskyblue;
+            width: 350px;
+            height: auto;
+        }
+        .background-lightblue{
+            background-color: lightskyblue;
+            padding: 10px;
+            text-align: center;
+        }
+        @media (max-width:1080px){                  /* TABLET MEDIA QUERY*/
+            .flex-container{
+                background-color: lightpink;
+            }
+            .flex-container-2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column-reverse;
+            }
+        }
+        @media (max-width:580px){                   /* MOBILE MEDIA QUERY*/
+            body{
+                margin:15px;
+            }
+            .flex-container{
+                background-color: darkgray;
+                flex-direction: column-reverse;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+            .flex-item-1, .flex-item-2, .flex-item-3{
+                width:100%;
+                background-color: lightgrey;
+            }
+        }
+        @media (max-width:360px){                   /* MOBILE MEDIA QUERY*/
+            body{
+                margin:15px;
+            }
+            .flex-container{
+                background-color: darkgray;
+                flex-direction: column-reverse;
+            }
+            img{
+                width: 80vw;
+                height: auto;
+            }
+            .flex-item-1, .flex-item-2, .flex-item-3{
+                width:100%;
+                background-color: lightgrey;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="flex-container-1" class="flex-container">          <!-- parent flex-->
+        <div class="flex-item-1">element1</div>                 <!-- LEFT SIDE-->
+        <div class="flex-item-2">element2</div>                 <!-- MIDDLE SIDE-->
+        <div class="flex-item-1">element3</div>                 <!-- RIGHT SIDE-->
+    </div>
+
+    <div id="flex-container-2" class="flex-container">          <!-- parent flex-->
+        <div class="flex-item-1">element 1</div>                <!-- LEFT SIDE-->
+        <div class="flex-item-1">element 1</div>                <!-- RIGHT SIDE-->
+    </div>
+
+    <div id="flex-container-3" class="flex-container">          <!-- parent flex-->
+        <div class="flex-item-3">                               <!-- LEFT SIDE-->
+            <div class="flex-container">                        <!-- sub flex-->
+                <div class="flex-item-3">                       <!-- LEFT LEFT SIDE-->
+                    <img src="./images/noorgboorg_back.jpg" alt="haribo">
+                </div>
+                <div class="flex-item-3">                       <!-- LEFT RIGHT SIDE-->
+                    <div class="background-lightblue">Information</div> 
+                </div>
+            </div>
+        </div>
+        <div class="flex-item-3">                                <!-- RIGHT SIDE-->
+            Element 2
+        </div>
+    </div>
+
+</body>
+</html>
